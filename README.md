@@ -1,71 +1,84 @@
-# Pinterest Developer Policy Checklist – Xi02
+# Xi02 Developer Compliance Documentation
 
-## 1. App Purpose
+## Overview
 
-Xi02 is a Pinterest creator workflow assistant.
+Xi02 is a creator workflow assistant designed to help users organize and manage their own Pinterest content through the official Pinterest API.
 
-It helps users organize and manage their own authorized Pinterest boards and pins for personal creative planning.
+The application focuses on:
 
-## 2. Allowed Use Positioning
+* Content organization
+* Board management
+* Pin management
+* Inspiration workflow support
+* Creator productivity
 
-Xi02 is positioned as:
+Xi02 is not a platform analytics service, benchmarking tool, competitor intelligence system, or market research product.
 
-* Creator workflow tool
-* Inspiration organization tool
-* Pinterest content management assistant
-* User-authorized board and pin organizer
+---
 
-Xi02 is not positioned as:
+## Pinterest API Usage
 
-* Pinterest trend intelligence platform
-* Market research database
-* Competitor benchmarking product
-* Platform-wide analytics tool
+Xi02 accesses Pinterest content exclusively through the official Pinterest API.
 
-## 3. Data Access
+The application does not:
 
-Pinterest data is accessed only through:
+* Scrape Pinterest
+* Collect Pinterest passwords
+* Circumvent Pinterest authorization systems
+* Access private content without authorization
 
-* Official Pinterest API
-* OAuth user authorization
-* Minimal requested scopes
+All Pinterest access requires explicit OAuth authorization from the user.
 
-Xi02 does not scrape Pinterest or access data outside approved API permissions.
+---
 
-## 4. Data Storage
+## Requested Initial Scopes
 
-Xi02 does not permanently store raw Pinterest API content.
+The initial application requests only:
 
-Any temporary cache is limited to operational processing and is not used to build a long-term Pinterest dataset.
+* user_accounts:read
+* boards:read
+* pins:read
 
-## 5. User Control
+These permissions are used solely to support user-authorized workflow features.
 
-Users explicitly connect their Pinterest account through OAuth.
+---
 
-Users can revoke access at any time from Pinterest account settings.
+## Data Handling Principles
 
-Xi02 does not perform automated posting, saving, following, commenting, or engagement actions without user confirmation.
+Xi02 follows a data minimization approach.
 
-## 6. Data Sharing
+We:
 
-Xi02 does not sell, rent, license, or share Pinterest-derived data with third parties.
+* Access Pinterest data only when needed
+* Use Pinterest data only for the authenticated user's workflow
+* Do not sell or share Pinterest-derived information
+* Do not provide competitor benchmarking or platform-wide analytics
 
-Xi02 does not provide Pinterest-derived benchmarking, competitor comparison, or platform-level insights.
+---
 
-## 7. Security
+## OAuth Flow
 
-Access tokens are stored securely.
+1. User clicks Connect Pinterest
+2. User is redirected to Pinterest OAuth
+3. User grants authorization
+4. Pinterest returns authorization code
+5. Xi02 exchanges code for access token
+6. Xi02 accesses authorized Pinterest content
+7. Content is displayed for the user's workflow
 
-Client secrets and tokens are never committed to public repositories.
+---
 
-Environment variables or encrypted storage are used for sensitive credentials.
+## Privacy Policy
 
-## 8. Initial API Request
+See:
 
-Initial API access will request only:
+privacy-policy.md
 
-* `user_accounts:read`
-* `boards:read`
-* `pins:read`
+---
 
-Write permissions and advanced scopes will not be requested in the first application.
+## Contact
+
+Project: Xi02
+
+Website:
+https://www.xi02.com
